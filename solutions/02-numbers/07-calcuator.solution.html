@@ -1,6 +1,6 @@
 <!--
   To open this in Chrome, Edge, Safari, Firefox, or another browser:
-  1. Right click on this tab (05-combine-text.html) and select "Copy Path".
+  1. Right click on this tab (06-fix-bug.html) and select "Copy Path".
   2. Open a new tab in your browser and paste the path in the address bar.
   3. Refresh the page whenever you make a change.
 
@@ -19,36 +19,40 @@
       integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
       crossorigin="anonymous"
     />
+    <style>
+      #answer {
+        display: inline-block;
+      }
+    </style>
   </head>
   <body>
     <form id="form" action="GET" class="container pt-5 mb-5">
-      <div class="mb-2">
-        <label for="firstName">First Name:</label>
-        <input id="firstName" type="text" />
-      </div>
-      <div class="mb-2">
-        <label for="lastName">Last Name:</label>
-        <input id="lastName" type="text" />
-      </div>
-      <button class="btn btn-primary" type="submit">Next</button>
+      <input id="a" type="number" value="0" />
+      +
+      <input id="b" type="number" value="0" />
+      =
+      <span class="border rounded-1 bg-light py-1 px-2" id="answer">0</span>
     </form>
     <script>
       /**
        * Note: We will be going over a lot of what this code is doing later when we talk about the "DOM".
-       * For now, you just need to use what you've learned about strings to complete this exercise.
-       * If you get this exercise right, after entering your name and clicking "Next",
-       * you should see a popup that says "Hello YOUR_NAME"
+       * For now, you just need to use what you've learned about numbers to complete this exercise.
+       * If you get this exercise right, it should add the two inputs and display the results on the screen.
+       * If "= 0" is always displayed on your screen, then there is a bug in your code.
        */
 
       // Do not change this.
       !(function () {
-        document.querySelector("#form").addEventListener("submit", (e) => {
-          e.preventDefault();
+        Object.values(document.querySelectorAll("input")).forEach((input) => {
+          input.addEventListener("input", () => {
+            let a = parseInt(document.querySelector("#a").value || 0);
+            let b = parseInt(document.querySelector("#b").value || 0);
 
-          const firstName = document.querySelector("#firstName").value;
-          const lastName = document.querySelector("#lastName").value;
+            // Create a variable called "sum" on the line below. It should be equal to a + b.
+            let sum = a + b;
 
-          alert(`${firstName} ${lastName}` /* Combine "firstName" and "lastName" here */);
+            document.querySelector("#answer").textContent = sum || "-";
+          });
         });
       })();
     </script>
