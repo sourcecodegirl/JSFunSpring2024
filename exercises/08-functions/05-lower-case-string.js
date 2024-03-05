@@ -16,3 +16,11 @@
  */
 
 // WRITE YOUR ANSWER BELOW THIS LINE
+const lowerCaseString = (string) => {
+    if (string && typeof string == 'string') {
+        return string.toLowerCase();
+    }
+};
+
+let lowerString = lowerCaseString('I AM LOWERCASED!');
+console.log(lowerString);
