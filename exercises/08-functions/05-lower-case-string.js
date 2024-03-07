@@ -17,10 +17,11 @@
 
 // WRITE YOUR ANSWER BELOW THIS LINE
 const lowerCaseString = (string) => {
-    if (string && typeof string == 'string') {
+    if (typeof string === 'string') {
         return string.toLowerCase();
+    } else {
+        return 'Please enter a string.';
     }
 };
 
-let lowerString = lowerCaseString('I AM LOWERCASED!');
-console.log(lowerString);
+console.log(lowerCaseString('I AM LOWERCASED'));

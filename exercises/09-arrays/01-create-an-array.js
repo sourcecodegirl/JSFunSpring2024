@@ -4,3 +4,4 @@
  */
 
 // WRITE YOUR ANSWER BELOW THIS LINE
+let restaurants = ['Five Guys', 'Texas Roadhouse', 'Red Lobster'];
