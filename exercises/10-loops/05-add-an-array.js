@@ -6,3 +6,14 @@ let numbers = [10000, -8, 10, 0.7]; // e.g.
  */
 
 // WRITE YOUR ANSWER BELOW THIS LINE
+
+//let sum = numbers[0] + numbers[1] + numbers[2] + numbers[3];
+//console.log(sum);
+
+let sum = 0;
+for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+    console.log(sum);
+}
+
+console.log(sum);

@@ -11,3 +11,16 @@ let string = "racecar";
  */
 
 // WRITE YOUR ANSWER BELOW THIS LINE
+
+
+let isPalindrome;
+
+let palindrome = string.split('').reverse().join('');
+
+if (palindrome === string) {
+    isPalindrome = true;
+} else {
+    isPalindrome = false;
+}
+
+console.log(isPalindrome);
