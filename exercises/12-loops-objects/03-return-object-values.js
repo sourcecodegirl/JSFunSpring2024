@@ -18,6 +18,6 @@ const blogPost = {
  */
 
 // WRITE YOUR ANSWER BELOW THIS LINE
-const values = [blogPost.title, blogPost.author, blogPost.date, blogPost.content];
+const values = Object.values(blogPost);
 
 console.log(values);
