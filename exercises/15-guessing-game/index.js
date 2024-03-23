@@ -7,7 +7,7 @@ function generateNumber(min, max) {
 }
 
 // Initialize game and prompt user for difficulty level
-console.log("\nWelcome to the number guessing game.\nPress control c to quit at any time.\n");
+console.log('\nWelcome to the number guessing game.\nPress control c to quit at any time.\n');
 let level = prompt.question('Please enter a difficulty level: easy, medium, hard.\n').toLowerCase();
 let start, end;
 
@@ -52,5 +52,3 @@ while (parseInt(number) !== randomNumber) {
 // Exit loop when correct
 guess++; // Increment number of guesses for correct answer
 console.log(`\nCorrect! You answered within ${guess} tries!\nEnter "node ." to play again.\n`);
-
-// Quit game with control c
