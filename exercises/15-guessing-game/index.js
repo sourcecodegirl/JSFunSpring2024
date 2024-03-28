@@ -3,7 +3,7 @@ import prompt from "readline-sync";
 
 // Function to generate random number within a range
 function generateNumber(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+    return Math.floor(Math.random() * max) + min;
 }
 
 // Initialize game and prompt user for difficulty level
