@@ -24,3 +24,9 @@ const links = [
  */
 
 // WRITE YOUR ANSWER BELOW THIS LINE
+
+links.forEach((link, i) => {
+    htmlStr += `<a href="${link}">${++i}. ${link}</a>`;
+  });
+
+console.log(htmlStr);
