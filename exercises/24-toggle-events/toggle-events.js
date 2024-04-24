@@ -34,7 +34,12 @@
   const viewComments = document.querySelector('#view-comments');
 
   commentButton.addEventListener('click', () => {
-  viewComments.classList.remove('hidden');
+    if (viewComments.classList.contains('hidden')) {
+      commentButton.textContent = 'Hide Comments';
+    } else {
+      commentButton.textContent = 'View Comments';
+    }
+    viewComments.classList.toggle('hidden');
   });
 
 })();
