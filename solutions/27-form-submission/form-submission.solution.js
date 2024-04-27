@@ -34,5 +34,57 @@
    *
    * To start, you will need to hide some element on the page and change the input's classes.
    */
-  // Write your JavaScript here
+
+  // Step 1: Target
+  const terms = document.querySelector("#terms");
+  const termsError = document.querySelector("#termsError");
+  const termsSuccess = document.querySelector("#termsSuccess");
+  const checkbox = document.querySelector("#terms");
+
+  // Step 3: Do something
+
+  const showTermsError = () => {
+    // Makes "I Agree to the Terms and Conditions" red
+    if (!terms.classList.contains("is-invalid")) {
+      terms.classList.add("is-invalid");
+    }
+
+    // Hides success message
+    if (!termsSuccess.classList.contains("hidden")) {
+      termsSuccess.classList.add("hidden");
+    }
+
+    // Shows error message
+    if (termsError.classList.contains("hidden")) {
+      termsError.classList.remove("hidden");
+    }
+  };
+
+  const showTermsSuccess = () => {
+    // Reverts "I Agree to the Terms and Conditions" back to original color
+    if (terms.classList.contains("is-invalid")) {
+      terms.classList.remove("is-invalid");
+    }
+
+    // Hides success message
+    if (termsSuccess.classList.contains("hidden")) {
+      termsSuccess.classList.remove("hidden");
+    }
+
+    // Shows error message
+    if (!termsError.classList.contains("hidden")) {
+      termsError.classList.add("hidden");
+    }
+  };
+
+  // Step 2: React to an event
+  document.querySelector("#termsForm").addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    if (checkbox.checked) {
+      showTermsSuccess();
+    } else {
+      showTermsError();
+    }
+  });
 })();
