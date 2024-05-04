@@ -4,6 +4,8 @@
    * You are allowed to make changes to the HTML and CSS.
    */
   // Write your answer here
+
+
   /**
    * Problem 1: Display the results of the world's most pointless search engine.
    *
@@ -17,6 +19,21 @@
    * and you must prevent the page from refreshing when the form is submitted.
    */
   // Write your answer here
+
+const form = document.querySelector('#search-form');
+const search = document.querySelector('#searchInput');
+const result = document.querySelector('#result');
+
+form.addEventListener('submit', (event) => {
+  if (search.value) {
+    event.preventDefault();
+    result.textContent = `No results for ${search.value} found`;
+  } else {
+    event.preventDefault();
+    result.textContent = 'Type in the search field to search.';
+  }
+});
+
   /**
    * Problem 2: Agree to the terms and conditions
    *
@@ -35,4 +52,5 @@
    * To start, you will need to hide some element on the page and change the input's classes.
    */
   // Write your answer here
+
 })();
