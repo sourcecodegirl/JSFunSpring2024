@@ -35,7 +35,7 @@ function updateImg(url) {
 // listen for button click and update image
 const randomBtn = document.querySelector('#random');
 
-randomBtn.addEventListener('click', (event) => {
+randomBtn.addEventListener('click', () => {
   getRandomImg();
 });
 
