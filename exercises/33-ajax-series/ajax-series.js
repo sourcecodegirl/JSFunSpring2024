@@ -17,4 +17,44 @@
    *
    * You must make two AJAX request to solve this problem.
    */
+
+// get list of characters from API
+const updateCharList = async () => {
+  try {
+    let response = await axios.get('https://rickandmortyapi.com/api/character');
+    const characters = response.data.results;
+    const dropdown = document.querySelector('#dropdown');
+
+    // loop each character
+    characters.forEach(character => {
+      const option = document.createElement('option');
+      option.textContent = character.name;
+      dropdown.appendChild(option);
+    });
+
+    // event listener for dropdown
+    dropdown.addEventListener('change', async (event) => {
+      const selectedCharacterName = event.target.value;
+      const selectedCharacter = characters.find(character => character.name === selectedCharacterName);
+      if (selectedCharacter) {
+        try {
+          const imageResponse = await axios.get(selectedCharacter.image);
+          const characterImage = document.querySelector('#get-schwifty');
+          const characterTitle = document.querySelector('#title-head');
+          characterImage.src = imageResponse.request.responseURL;
+          characterImage.alt = selectedCharacter.name;
+          characterTitle.textContent = selectedCharacter.name;
+        } catch (imageError) {
+          console.error('There was an error retrieving the image:', imageError);
+        }
+      }
+    });
+
+  } catch (err) {
+    console.error('There was an error retrieving the character list:', err);
+  }
+};
+
+updateCharList();
+
 })();
