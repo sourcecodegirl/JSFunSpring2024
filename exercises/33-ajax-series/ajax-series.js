@@ -40,7 +40,7 @@ const updateCharList = async () => {
         try {
           const imageResponse = await axios.get(selectedCharacter.image);
           const characterImage = document.querySelector('#get-schwifty');
-          const characterTitle = document.querySelector('#title-head');
+          const characterTitle = document.querySelector('#photo-caption');
           characterImage.src = imageResponse.request.responseURL;
           characterImage.alt = selectedCharacter.name;
           characterTitle.textContent = selectedCharacter.name;
